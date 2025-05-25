@@ -17,12 +17,6 @@ mongoose
   .then(() => console.log("Mongo DB Connected"))
   .catch((err) => console.log("Mongodb Error", err));
 
-  const allowedOrigin = 'http://localhost:5173';
-
-  app.use(cors({
-    origin: allowedOrigin,      // NOT '*', but your exact frontend origin
-    credentials: true           // allow cookies and credentials
-  }));
 app.use("/user", handleSignup);
 app.listen(PORT, () => {
   console.log("App is running on PORT ", PORT);
